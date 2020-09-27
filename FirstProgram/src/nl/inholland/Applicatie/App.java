@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-import javax.swing.*;
+
 
 public class App extends Application {
     public static void main(String[] args) {
