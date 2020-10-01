@@ -1,7 +1,6 @@
 package shekho.com.applicatie;
 
 import javafx.application.Application;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,9 +13,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.time.LocalDate;
-import java.util.List;
 
 public class PeopleManager extends Application {
 
@@ -56,11 +52,15 @@ public class PeopleManager extends Application {
         textFieldBirthDate.setPromptText("Birth date");
 
         Button addButton = new Button("Add");
+        addButton.setStyle("-fx-background-color: slateblue;-fx-font: bold 10pt \"Arial\"");
         Button deleteButton = new Button("Delete");
+        deleteButton.setId("deleteButton");
 
        addButton.setOnAction(new EventHandler<ActionEvent>() {
            @Override
            public void handle(ActionEvent actionEvent) {
+               if(textFieldFirstname.getText().isBlank() || textFieldLastname.getText().isBlank())
+                   return;
                users.add(new User(textFieldFirstname.getText(),textFieldLastname.getText(),textFieldBirthDate.getValue()));
            }
        });
@@ -83,6 +83,7 @@ public class PeopleManager extends Application {
         layout.getChildren().add(form);
 
         Scene scene = new Scene(layout);
+        scene.getStylesheets().add("resources/css/style.css");
         window.setScene(scene);
         window.show();
     }

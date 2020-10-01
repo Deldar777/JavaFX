@@ -1,0 +1,14 @@
+.root{
+    -fx-background-color: #A7C8F2;
+
+}
+
+.button{
+    -fx-text-fill: White;
+    -fx-background-color: #048ABF;
+    -fx-background-radius: 5px;
+}
+#deleteButton{
+    -fx-font: bold 10pt "Arial";
+    -fx-background-color: black;
+}
