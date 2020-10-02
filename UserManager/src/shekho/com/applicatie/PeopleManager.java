@@ -10,19 +10,25 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import jfxtras.styles.jmetro.JMetro;
+import jfxtras.styles.jmetro.Style;
 
 
-
-public class PeopleManager extends Application {
+public class PeopleManager extends Application{
 
     public static void start(String[] chain){
         launch(chain);
     }
     @Override
     public void start(Stage window) throws Exception {
+        JMetro jMetro = new JMetro(Style.DARK);
+
+
+
+
         window.setTitle("People Manager");
         window.getIcons().add(new Image(getClass().getResourceAsStream("managerImage.png")));
         window.setMinWidth(250);
@@ -32,7 +38,9 @@ public class PeopleManager extends Application {
 
 
         VBox layout = new VBox();
+        layout.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
         layout.setPadding(new Insets(10));
+
 
         TableView tableView = new TableView();
 
@@ -84,11 +92,9 @@ public class PeopleManager extends Application {
         layout.getChildren().add(tableView);
         layout.getChildren().add(form);
 
-
         Scene scene = new Scene(layout);
+        jMetro.setScene(scene);
         scene.getStylesheets().add("resources/css/style.css");
-
-
         window.setScene(scene);
         window.show();
     }
