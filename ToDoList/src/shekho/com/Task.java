@@ -1,6 +1,8 @@
 package shekho.com;
 
-public class Task {
+import java.io.Serializable;
+
+public class Task implements Serializable {
     private String description;
     private boolean completed;
 
