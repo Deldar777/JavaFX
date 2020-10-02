@@ -14,6 +14,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
+
 public class PeopleManager extends Application {
 
     public static void start(String[] chain){
@@ -82,8 +84,11 @@ public class PeopleManager extends Application {
         layout.getChildren().add(tableView);
         layout.getChildren().add(form);
 
+
         Scene scene = new Scene(layout);
         scene.getStylesheets().add("resources/css/style.css");
+
+
         window.setScene(scene);
         window.show();
     }
