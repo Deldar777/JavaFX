@@ -1,6 +1,8 @@
 package UI;
 
 import DAL.Database;
+import Logic.Login;
+import Model.User;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,26 +25,23 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.imageio.stream.FileImageInputStream;
-import javax.swing.*;
-import javax.swing.text.IconView;
-import java.awt.*;
 import java.io.FileInputStream;
-import java.util.List;
+import java.time.LocalDate;
+
 
 public class LoginScreen extends Application {
     public static void main(String[] args){launch(args);}
 
     @Override
     public void start(Stage window) throws Exception {
-        String user = "JavaFX2";
-        String pw = "password";
-        final String[] checkUser = new String[1];
-        final String[] checkPw = new String[1];
 
-        Database database = new Database();
+        /*User user = new User("deldar","shekho12","Deldar","Shekho", LocalDate.of(1990,1,1));
+        Home home = new Home(user);*/
+        Login login = new Login();
 
         try{
+            window.setTitle("University Project");
+            window.getIcons().add(new Image(getClass().getResourceAsStream("universityImage.png")));
             window.setHeight(300);
             window.setWidth(500);
 
@@ -51,7 +50,7 @@ public class LoginScreen extends Application {
 
             //Adding hBox
             HBox hb = new HBox();
-            //hb.setBackground(new Background(new BackgroundFill(Color.BLACK,CornerRadii.EMPTY,Insets.EMPTY)));
+            hb.setBackground(new Background(new BackgroundFill(Color.BLACK,CornerRadii.EMPTY,Insets.EMPTY)));
             hb.setPadding(new Insets(20,20,20,30));
 
             //Adding GridPane
@@ -92,7 +91,7 @@ public class LoginScreen extends Application {
             text.setFont(Font.font("Courier New", FontWeight.BOLD, 28));
             text.setEffect(dropShadow);
 
-            /*Image image = new Image(new FileInputStream("D:\\universityImage.png"));
+          /* Image image = new Image(new FileInputStream("D:\\universityImage.png"));
             ImageView imageView = new ImageView(image);
 
 
@@ -112,17 +111,26 @@ public class LoginScreen extends Application {
                 @Override
                 public void handle(ActionEvent actionEvent) {
 
-                    checkUser[0] = txtUserName.getText();
-                    checkPw[0] = pf.getText();
+                    String usernameInput = txtUserName.getText();
+                    String passwordInput = pf.getText();
 
-                    if(checkUser[0].equals(user) && checkPw[0].equals(pw)){
-                        lblMessage.setText("Congratulations!");
-                        lblMessage.setTextFill(Color.GREEN);
+                    if(!usernameInput.isEmpty() && !passwordInput.isEmpty()){
+
+                        User user = login.validateLogin(usernameInput,passwordInput);
+
+                        if(user != null){
+                            Home home = new Home(user);
+                            window.close();
+                        }else{
+                            lblMessage.setText("The username of the password isn't correct");
+                        }
+                    }else{
+                        lblMessage.setText("don't leave the fields empty!");
                     }
-                    else{
-                        lblMessage.setText("Incorrect user or pw.");
-                        lblMessage.setTextFill(Color.RED);
-                    }
+
+
+
+
                     txtUserName.setText("");
                     pf.setText("");
                 }

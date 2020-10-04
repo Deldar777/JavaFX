@@ -21,6 +21,31 @@ public class Database {
         return users;
     }
 
+    public List<Student> getStudents(){
+        List<Student> students = new ArrayList<>();
+        for (User u:users
+             ) {
+            if(u instanceof Student){
+                Student student = (Student)u;
+                students.add(student);
+            }
+        }
+
+        return students;
+    }
+
+    public List<User> getTeacher(){
+        List<User> teachers = new ArrayList<>();
+        for (User u:users
+        ) {
+            if(u instanceof Teacher){
+                teachers.add(u);
+            }
+        }
+
+        return teachers;
+    }
+
     public void createUsers(){
         Manager manger = new Manager("deldar","deldar12","Deldar","Shekho", LocalDate.of(1989,10,13));
         Teacher teacher1 = new Teacher("david","david12","David","Taylor", LocalDate.of(1965,6,15));

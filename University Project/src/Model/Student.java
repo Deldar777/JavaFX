@@ -4,36 +4,50 @@ import java.time.LocalDate;
 
 public class Student extends User{
     public String group;
-    private int java;
-    private int php;
-    private int csharp;
-    private int python;
+    public int java;
+    public int php;
+    public int csharp;
+    public int python;
 
-    public void setJavaGrade(int javaGrade){
-        java = javaGrade;
+    public String getGroup() {
+        return group;
     }
-    public int getJavaGrade(){
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public int getJava() {
         return java;
     }
-    public void setPHPGrade(int phpGrade){
-        php = phpGrade;
+
+    public void setJava(int java) {
+        this.java = java;
     }
-    public int getPHPGrade(){
+
+    public int getPhp() {
         return php;
     }
-    public void setPythonGrade(int pythonGrade){
-        python = pythonGrade;
+
+    public void setPhp(int php) {
+        this.php = php;
     }
-    public int getPythonGrade(){
-        return python;
-    }
-    public void setCSHarpGrade(int csharpGrade){
-        csharp = csharpGrade;
-    }
-    public int getCSharpGrade(){
+
+    public int getCsharp() {
         return csharp;
     }
 
+    public void setCsharp(int csharp) {
+        this.csharp = csharp;
+    }
+
+    public int getPython() {
+        return python;
+    }
+
+    public void setPython(int python) {
+        this.python = python;
+    }
 
     public Student(String username, String password, String firstName, String lastName, LocalDate birthday) {
         super(username, password, firstName, lastName, birthday);

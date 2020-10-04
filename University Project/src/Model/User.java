@@ -1,20 +1,19 @@
 package Model;
 
-import DAL.Database;
-
 import java.time.LocalDate;
 import java.time.Period;
 
 public class User {
 
-    protected String firstName;
-    protected String lastName;
-    protected String username;
+    public String firstname;
+    public String lastname;
+    public String username;
     protected String password;
     protected int id;
-    protected AccesLevel accessLevel;
+    public AccesLevel accessLevel;
     public LocalDate birthday;
     public LocalDate currentDate;
+    public int age;
 
     private static int counter = 0;
 
@@ -26,17 +25,19 @@ public class User {
     public User(String username, String password, String firstName, String lastName, LocalDate birthday){
         this.username = username;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
         this.birthday = birthday;
         currentDate = LocalDate.now();
         id = setId();
+        age = getAge();
     }
 
     public int getId(){
         return id;
     }
 
+    public boolean checkUsername(String input){return input.equals(username);}
     public boolean checkPassword(String input){
         return input.equals(password);
     }
@@ -48,9 +49,24 @@ public class User {
         return true;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
     public String fullName(){
-        return firstName +" "+ lastName;
+        return firstname +" "+ lastname;
     }
 
     public int getAge(){
@@ -60,5 +76,9 @@ public class User {
         else {
             return 0;
         }
+    }
+
+    public boolean canEdit(){
+        return accessLevel == AccesLevel.Editor || accessLevel == AccesLevel.Admin;
     }
 }
