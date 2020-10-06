@@ -29,7 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Programs/Javafx/javafx-sdk-11.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -50,15 +50,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -83,7 +81,10 @@
       <workItem from="1601748216094" duration="91000" />
       <workItem from="1601759164280" duration="750000" />
       <workItem from="1601760061401" duration="1848000" />
-      <workItem from="1601819185716" duration="8827000" />
+      <workItem from="1601819185716" duration="9018000" />
+      <workItem from="1601893967820" duration="602000" />
+      <workItem from="1601895149499" duration="726000" />
+      <workItem from="1601975005461" duration="6263000" />
     </task>
     <servers />
   </component>
@@ -95,34 +96,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601671872332" />
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1601825472092">
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser" timestamp="1601828108934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601825472092" />
+    <state x="574" y="119" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601828108934" />
     <state x="310" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601826866033">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="310" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1601826866033" />
-    <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1601671639261">
+    <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1601895634510">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601671639261" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1601827905372">
+    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601895634510" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1601982352327">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601827905372" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1601827905372">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601982352327" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1601982352327">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601827905372" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1601827905372">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601982352327" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1601982352326">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601827905372" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1601827905372">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601982352326" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1601982352327">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601827905372" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601982352327" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1601742924479">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -143,6 +144,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601671643156" />
+    <state x="209" y="33" key="new project wizard" timestamp="1601975392630">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1601975392630" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601819634363">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

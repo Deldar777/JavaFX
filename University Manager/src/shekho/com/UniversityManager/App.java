@@ -1,15 +1,13 @@
-package UI;
+package shekho.com.UniversityManager;
 
-import Logic.Login;
-import Model.User;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Reflection;
@@ -20,19 +18,20 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import shekho.com.UniversityManager.DAL.Database;
+import shekho.com.UniversityManager.Models.User;
+import shekho.com.UniversityManager.UI.windows.MainWindow;
 
+public class App extends Application {
 
-public class LoginScreen extends Application {
     public static void main(String[] args){launch(args);}
-
     @Override
     public void start(Stage window) throws Exception {
 
-        /*User user = new User("deldar","shekho12","Deldar","Shekho", LocalDate.of(1990,1,1));
-        Home home = new Home(user);*/
-        Login login = new Login();
-
         try{
+
+            Database database = new Database();
+
             window.setTitle("University Project");
             window.getIcons().add(new Image(getClass().getResourceAsStream("universityImage.png")));
             window.setHeight(300);
@@ -43,7 +42,7 @@ public class LoginScreen extends Application {
 
             //Adding hBox
             HBox hb = new HBox();
-            hb.setBackground(new Background(new BackgroundFill(Color.BLACK,CornerRadii.EMPTY,Insets.EMPTY)));
+            hb.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY,Insets.EMPTY)));
             hb.setPadding(new Insets(20,20,20,30));
 
             //Adding GridPane
@@ -84,13 +83,6 @@ public class LoginScreen extends Application {
             text.setFont(Font.font("Courier New", FontWeight.BOLD, 28));
             text.setEffect(dropShadow);
 
-          /* Image image = new Image(new FileInputStream("D:\\universityImage.png"));
-            ImageView imageView = new ImageView(image);
-
-
-            //Adding image to HBox
-            hb.getChildren().add(imageView);*/
-
             //Adding text to HBox
             hb.getChildren().add(text);
 
@@ -109,10 +101,11 @@ public class LoginScreen extends Application {
 
                     if(!usernameInput.isEmpty() && !passwordInput.isEmpty()){
 
-                        User user = login.validateLogin(usernameInput,passwordInput);
 
+                        User user = database.validateLogin(usernameInput,passwordInput);
                         if(user != null){
-                            Home home = new Home(user);
+                            MainWindow mw = new MainWindow();
+                            mw.getWindow().show();
                             window.close();
                         }else{
                             lblMessage.setText("The username of the password isn't correct");
@@ -121,14 +114,10 @@ public class LoginScreen extends Application {
                         lblMessage.setText("don't leave the fields empty!");
                     }
 
-
-
-
                     txtUserName.setText("");
                     pf.setText("");
                 }
             });
-
 
 
             //Add HBox and GridPane layout to BorderPane Layout
@@ -137,14 +126,13 @@ public class LoginScreen extends Application {
 
             //Adding BorderPane to the scene and loading CSS
             Scene scene = new Scene(borderPane);
-            scene.getStylesheets().add(getClass().getClassLoader().getResource("resources/css/login.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getClassLoader().getResource("resources/css/Style.css").toExternalForm());
             window.setScene(scene);
 
             window.show();
-        }catch (Exception e){
 
+        }catch (Exception e){
             System.out.println(e.getMessage());
         }
-
     }
 }

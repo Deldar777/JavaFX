@@ -1,10 +1,7 @@
 package Logic;
 
-import DAL.Database;
+import shekho.com.universityManager.DAL.Database;
 import Model.User;
-
-import javax.xml.crypto.Data;
-import java.util.List;
 
 public class Login {
 

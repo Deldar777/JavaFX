@@ -1,7 +1,6 @@
 package UI;
 
-import DAL.Database;
-import Model.AccesLevel;
+import shekho.com.universityManager.DAL.Database;
 import Model.Student;
 import Model.Teacher;
 import Model.User;
@@ -13,15 +12,9 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import java.io.FileInputStream;
 
 
 public class Home {

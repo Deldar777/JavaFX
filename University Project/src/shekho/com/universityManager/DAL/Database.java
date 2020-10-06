@@ -1,4 +1,4 @@
-package DAL;
+package shekho.com.universityManager.DAL;
 
 import Model.Manager;
 import Model.Student;
@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Database {
+
     private List<User> users;
 
     public Database(){
@@ -20,6 +21,7 @@ public class Database {
     public List<User> getUsers() {
         return users;
     }
+
 
     public List<Student> getStudents(){
         List<Student> students = new ArrayList<>();
