@@ -1,0 +1,138 @@
+package shekho.com.UniversityManager;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Reflection;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import shekho.com.UniversityManager.DAL.Database;
+import shekho.com.UniversityManager.Models.User;
+import shekho.com.UniversityManager.UI.windows.MainWindow;
+
+public class App extends Application {
+
+    public static void main(String[] args){launch(args);}
+    @Override
+    public void start(Stage window) throws Exception {
+
+        try{
+
+            Database database = new Database();
+
+            window.setTitle("University Project");
+            window.getIcons().add(new Image(getClass().getResourceAsStream("universityImage.png")));
+            window.setHeight(300);
+            window.setWidth(500);
+
+            BorderPane borderPane = new BorderPane();
+            borderPane.setPadding(new Insets(10,50,50,50));
+
+            //Adding hBox
+            HBox hb = new HBox();
+            hb.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY,Insets.EMPTY)));
+            hb.setPadding(new Insets(20,20,20,30));
+
+            //Adding GridPane
+            GridPane gridPane = new GridPane();
+            gridPane.setPadding(new Insets(20,20,20,20));
+            gridPane.setHgap(1);
+            gridPane.setVgap(15);
+
+            //Implementing Nodes for GridPane
+            Label lblUserName = new Label("Username");
+            final TextField txtUserName = new TextField();
+            Label lblPassword = new Label("Password");
+            final PasswordField pf = new PasswordField();
+            Button btnLogin = new Button("Login");
+            btnLogin.setPrefWidth(100);
+            final Label lblMessage = new Label();
+
+            //Adding Nodes to GridPane layout
+            gridPane.add(lblUserName, 0, 0);
+            gridPane.add(txtUserName, 1, 0);
+            gridPane.add(lblPassword, 0, 1);
+            gridPane.add(pf, 1, 1);
+            gridPane.add(btnLogin, 1, 2);
+            gridPane.add(lblMessage, 1, 3);
+
+            //Reflection for gridPane
+            Reflection r = new Reflection();
+            r.setFraction(0.7f);
+            gridPane.setEffect(r);
+
+            //DropShadow effect
+            DropShadow dropShadow = new DropShadow();
+            dropShadow.setOffsetX(5);
+            dropShadow.setOffsetY(5);
+
+            //Adding text and DropShadow effect to it
+            Text text = new Text("University Project");
+            text.setFont(Font.font("Courier New", FontWeight.BOLD, 28));
+            text.setEffect(dropShadow);
+
+            //Adding text to HBox
+            hb.getChildren().add(text);
+
+            //Add ID's to Nodes
+            borderPane.setId("bp");
+            gridPane.setId("root");
+            btnLogin.setId("btnLogin");
+            text.setId("text");
+
+            btnLogin.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+
+                    String usernameInput = txtUserName.getText();
+                    String passwordInput = pf.getText();
+
+                    if(!usernameInput.isEmpty() && !passwordInput.isEmpty()){
+
+
+                        User user = database.validateLogin(usernameInput,passwordInput);
+                        if(user != null){
+                            MainWindow mw = new MainWindow(user,database);
+                            mw.getWindow().show();
+                            window.close();
+                        }else{
+                            lblMessage.setText("The username of the password isn't correct");
+                        }
+                    }else{
+                        lblMessage.setText("don't leave the fields empty!");
+                    }
+
+                    txtUserName.setText("");
+                    pf.setText("");
+                }
+            });
+
+
+            //Add HBox and GridPane layout to BorderPane Layout
+            borderPane.setTop(hb);
+            borderPane.setCenter(gridPane);
+
+            //Adding BorderPane to the scene and loading CSS
+            Scene scene = new Scene(borderPane);
+            scene.getStylesheets().add(getClass().getClassLoader().getResource("resources/css/Style.css").toExternalForm());
+            window.setScene(scene);
+
+            window.show();
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+}

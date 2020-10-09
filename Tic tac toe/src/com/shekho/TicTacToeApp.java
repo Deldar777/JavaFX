@@ -57,6 +57,8 @@ public class TicTacToeApp extends Application {
             combos.add(new combo(board[0][h],board[1][h],board[2][h]));
         }
 
+        
+
         //Vertical
         for (int v = 0; v < 3; v++) {
             combos.add(new combo(board[v][0],board[v][1],board[v][2]));
