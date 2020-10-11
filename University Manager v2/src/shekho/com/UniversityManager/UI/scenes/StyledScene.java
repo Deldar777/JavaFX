@@ -14,6 +14,5 @@ public class StyledScene extends Scene {
         jMetro.setScene(this);
         jMetro.setAutomaticallyColorPanes(true);
         this.getStylesheets().add("resources/css/style.css");
-
     }
 }
