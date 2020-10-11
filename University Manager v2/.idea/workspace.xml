@@ -61,17 +61,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
@@ -89,6 +78,8 @@
       <workItem from="1601975397145" duration="6953000" />
       <workItem from="1602015195699" duration="6501000" />
       <workItem from="1602246797432" duration="15732000" />
+      <workItem from="1602409916808" duration="9000" />
+      <workItem from="1602419995404" duration="1602000" />
     </task>
     <servers />
   </component>
@@ -108,10 +99,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="538" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1602015403329" />
-    <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1601975675169">
+    <state x="473" y="154" key="FileChooserDialogImpl" timestamp="1602420889692">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601975675169" />
+    <state x="473" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602420889692" />
     <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1602279635269">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -156,6 +147,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="479" y="11" width="578" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1602249694180" />
+    <state x="209" y="33" key="new project wizard" timestamp="1602420899942">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1602420899942" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1602276464482">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
